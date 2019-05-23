@@ -1,5 +1,8 @@
 from math import log
 def calcShannonEnt(dataSet):
+    '''
+    计算熵
+    '''
     numEntries = len(dataSet)
     labelCounts = {}
     for featVec in dataSet:
@@ -22,13 +25,13 @@ def createDataSet():
                [0, 1, 'no']]
     labels = ['no surfacing', 'flippers']
     return dataSet, labels
-def splitDataSet(datSet, axis, value):
-    retDataSet = {}
+def splitDataSet(dataSet, axis, value):
+    retDataSet = []
     for featVec in dataSet:
         if featVec[axis] == value:
             reducedFeatVec = featVec[:axis]
             reducedFeatVec.extend(featVec[axis+1:])
-            retDataSet.append(reduceFeatVec)
+            retDataSet.append(reducedFeatVec)
     return retDataSet
         
 if __name__=='__main__':
